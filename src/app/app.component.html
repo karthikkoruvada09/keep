@@ -1,0 +1,71 @@
+<div class="container-fluid">
+  <div class="row ">
+    <div class="col text-center"><h1>ENTER TO GOOGLE KEEP </h1></div>
+  </div>
+
+
+
+  <div class="row ml-0 mr-0" >
+    <div class="col-4"></div>
+    <div class="col-4">
+      <div clas="jumbotron bg-success">
+        <br/>
+        <br/>
+        <h1  >Login</h1>
+        <br/>
+        <form #ref="ngForm" (ngSubmit)="saveMethod(ref.value)">
+
+
+          <div class="form-group">
+            <p><label for="user"> <b>Title: </b></label>
+              <input id="user" type="text" class="form-control" placeholder="Title" name="title"  required [(ngModel)]="title">
+          </div>
+
+          <div class="form-group">
+            <label for="cpass"><b> Note:</b></label>
+            <input id="cpass" placeholder="13a@b3"  class="form-control" required name="note" [(ngModel)]="note">
+          </div>
+
+          <button type="submit"   class="btn btn-danger mt-4 " [disabled]="!ref.valid" >Create</button>
+        </form>
+      </div>
+
+
+    </div>
+    <div class="col-4"></div>
+  </div>
+
+  <div class="row ">
+    <div class="col text-center"><h1>Pinned data</h1></div>
+    <table border="8" class="table-striped table-hover" style="width:100%">
+      <thead style="font-size: 25px;color: darkblue" >
+      <th >Title</th>
+      <th>Matter</th>
+      <th>Status</th>
+      </thead>
+      <tr style="font-size: 20px;color:darkred" *ngFor="let i of pArray" >
+        <td>{{i.title}}</td>
+        <td>{{i.note}}</td>
+          <td><button  class="btn btn-danger mt-4 " (click)="updateRecordpin(i)" >Unpin</button></td>
+      </tr>
+    </table>
+  </div>
+
+
+  <div class="row ">
+    <div class="col text-center"><h1>UnPinned data</h1></div>
+    <table border="8" class="table-striped table-hover" style="width:100%">
+      <thead style="font-size: 25px;color: darkblue" >
+      <th >Title</th>
+      <th>Matter</th>
+      <th>Status</th>
+      </thead>
+
+      <tr style="font-size: 20px;color:darkred" *ngFor="let item of uparr" >
+          <td>{{item.title}}</td>
+          <td>{{item.note}}</td>
+          <td>          <button  class="btn btn-danger mt-4 " (click)="updateRecordunpin(item)" >pin</button></td>
+      </tr>
+    </table>
+  </div>
+</div>
