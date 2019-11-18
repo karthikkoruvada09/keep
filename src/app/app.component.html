@@ -42,7 +42,7 @@
     <table border="8" class="border-0" style="width:100%">
       <thead style="font-size: 25px;color: darkblue">
       <th>Title</th>
-      <th>Matter</th>
+      <th>Note</th>
       <th>Status</th>
       </thead>
       <tr style="font-size: 20px;color:darkred" *ngFor="let i of pArray">
@@ -50,6 +50,7 @@
         <td>{{i.note}}</td>
         <td>
           <button class="btn btn-danger mt-4 " (click)="updateRecordpin(i)">Unpin</button>
+
         </td>
       </tr>
     </table>
@@ -61,7 +62,7 @@
     <table border="8" class="border-0" style="width:100%">
       <thead style="font-size: 25px;color: darkblue">
       <th>Title</th>
-      <th>Matter</th>
+      <th>Note</th>
       <th>Status</th>
       </thead>
 
@@ -69,7 +70,7 @@
         <td>{{item.title}}</td>
         <td>{{item.note}}</td>
         <td>
-          <button class="btn btn-danger mt-4 " (click)="updateRecordunpin(item)">pin</button>
+          <button class="btn btn-primary mt-4 glyphicon glyphicon-pushpin" (click)="updateRecordunpin(item)"></button>
         </td>
       </tr>
     </table>
